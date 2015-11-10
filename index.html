@@ -18,7 +18,7 @@
 	<div class="container">
 		<div class="row">
 			<ul>
-				<li ng-repeat="person in students | filter:filterSearch">
+				<li ng-repeat="person in students | filter:filterSearch | orderBy:'name'">
 					<span class="col-md-3">{{person.name}}: {{person.desc}}</span>
 					<a class="col-md-1 btn btn-danger btn-xs" href='#' ng-click="removeStudent(person)">Remove</a>
 				</li>
