@@ -1,6 +1,6 @@
 angular.module('myApp', []).controller('myController', function($scope){
 
-	$scope.items = [
+	$scope.students = [
 		{
 			name: 'Freddy',
 			desc: 'Made a cool football game'
@@ -27,4 +27,13 @@ angular.module('myApp', []).controller('myController', function($scope){
 		}
 	]
 	
+
+	$scope.addPerson = function(){
+		var newPerson = {
+			name: $scope.newName,
+			desc: $scope.newDesc
+		}
+		$scope.students.push(newPerson)
+		console.log($scope.students)
+	}
 });
