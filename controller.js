@@ -34,6 +34,7 @@ angular.module('myApp', []).controller('myController', function($scope){
 			desc: $scope.newDesc
 		}
 		$scope.students.push(newPerson)
-		console.log($scope.students)
+		$scope.newName = '';
+		$scope.newDesc = '';
 	}
 });
