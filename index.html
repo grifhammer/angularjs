@@ -2,21 +2,30 @@
 <html ng-app="myApp">
 <head>
 	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
 	<script type="text/javascript" src='controller.js'></script>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body ng-controller="myController">
 	<h3>Name: Description</h3>
-	<ul>
-		<li ng-repeat="person in students">
-			{{person.name}}: {{person.desc}}
-		</li>
-	</ul>
+	<div class="container">
+		<div class="row">
+			<ul>
+				<li ng-repeat="person in students">
+					<span class="col-md-3">{{person.name}}: {{person.desc}}</span>
+					<a class="col-md-1 btn btn-danger btn-xs" href='#' ng-click="removeStudent(person)">Remove</a>
+				</li>
+			</ul>
+		</div>
+	</div>
 	<form ng-submit="addPerson()">
 		<input type='text' ng-model="newName" placeholder="Name">
 		<input type="text" ng-model="newDesc" placeholder="Description">
-		<input type="submit">
+		<input type="submit" class="btn btn-primary">
 	</form>
 </body>
 </html>
